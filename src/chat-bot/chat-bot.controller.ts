@@ -127,7 +127,7 @@ export class ChatBotController {
             }, {
               headers: {
                 'Content-Type': 'application/json',
-                'x-goog-api-key': "AIzaSyC0029wEeoLAtsZuTUFk4Z0vM2loafLwF0"
+                'x-goog-api-key': process.env.API_KEY
               }
             });
         let databasePromt = `${prompt} give me JSON format and category only in the following topics: [Science, General Knowledge, Art, History, Literature]. Do not give an array for 'related_topics', provide only string or number. Each result should have the following fields: question_simplified, answer_simplified, question_category, question_language, related_topics, difficulty_level, danger_level. Each JSON object should represent one question-answer pair with non-empty values. The structure of each JSON object should be as follows:
